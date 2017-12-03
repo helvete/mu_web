@@ -1,0 +1,101 @@
+body {
+ font-family: verdana, serif;
+ font-style: normal;
+ font-size: 0.9em;
+}
+a:link, a:visited, a:active, a:hover { color: black; text-decoration: none}
+table {table-layout: fixed; border-collapse: collapse; width: 100%; }
+td { text-align: right; }
+h2 { margin-top: 6px; }
+#menu span, #loginform { display: block; border-radius: 5px;}
+
+#restricted { background-color: black; color: #ff996e; font-weight: bold; margin-bottom: 5px; padding: 10px; border-radius: 5px; float: right; }
+#warning { background-color: #c91500; color: white; font-weight: bold; margin-bottom: 5px; padding: 10px; border-radius: 5px; float: right; }
+#success { background-color: #15c900; color: black; font-weight: bold; margin-bottom: 5px; padding: 10px; border-radius: 5px; float: right; }
+             
+#logobar { background: url('../pics/logo.png') no-repeat white left; border: 1px dotted black; height: 150px; margin: 5px; border-radius: 5px; position: fixed; left: 10px; top: 10px; right: 10px;}
+#status { background-color: #ff996e; float: right; padding: 10px; margin: 5px; border-radius: 5px; width: 145px;}
+#footer { background-color: #ff996e; padding: 5px; text-align: center; margin: 5px; border-radius: 5px; position: fixed; left: 10px; bottom: 10px; right: 10px;}
+#menu { line-height: 30px; background-color: white; border: 1px dotted black; padding: 10px; margin: 5px; text-align: center; border-radius: 5px; width: 200px; overflow-y: auto; position: fixed; left: 10px; top: 170px; bottom: 50px; font-size: 1.3em}
+
+#menulight a:link, #menulight a:visited, #menulight a:active, #menulight a:hover, #menulight, #loginform { color: black; background-color: #ff996e; }
+
+#content { background-color: white; border: 1px dotted black; position: fixed; left: 240px; top: 170px; bottom: 50px; right: 10px; padding: 10px; margin: 5px; border-radius: 5px; overflow-y: auto;  overflow-x: auto; }
+#regiform { min-width: 250px; }
+
+#regiform label { display: inline-block; width: 150px;}
+#obalec { width: 350px; background-color: #ff996e; padding: 10px; text-align: center; border-radius: 5px; position: relative; top: 10px; margin-bottom: 20px;}
+#obalec2 { width: 500px; background-color: #ff996e; padding: 10px; text-align: center; border-radius: 5px; position: relative; top: 10px; margin: auto; margin-bottom: 20px;}
+#clearF { clear: both; }  
+
+.status-ball {       
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid;
+  border-radius: 10px;
+  line-height: 10px;
+  float: right;
+  color: white;
+  text-align: center;
+}
+.green {       
+  background-color: green;
+  border-top-color: #22aa22;
+  border-left-color: #22aa22;
+  border-bottom-color: #006600;
+  border-right-color: #006600;
+}  
+.red {       
+  background-color: red;
+  border-top-color: #ff6666;
+  border-left-color: #ff6666;
+  border-bottom-color: #dd0000;
+  border-right-color: #dd0000;
+}
+
+.infoblock { background-color: #ff996e; width: 200px; border-radius: 5px; display: inline-block; padding: 10px; margin: 5px; vertical-align: top; height: 200px; line-height: 25px;}
+.downloadblock { height: 100px; }
+.infoblock b { float: right; }
+#status b { float: right; margin-left: 10px;}
+
+#menu #loginform { margin-top: 100px; line-height: 18px; font-size: 0.7em; text-align: right; padding: 10px;}
+#loginform label { float: left; }
+#logoutform { margin-top: 5px; margin-bottom: 5px;}
+.centered { text-align: center; }
+
+.statblock {background-color: #e0e033; }
+.statisticsblock { min-height: 300px; background-color: #ff775b; }
+#passchange { line-height: 10px; font-size: 8px; }
+
+.odsazenej { height: 35px; }
+.graphblock { width: 660px; }
+
+#list { padding: 5px; min-width: 600px; width: auto;}
+/* #list td, #list tr, */
+th { background-color: #ff996e; }
+                           
+.mark { width: 30px; text-align: center; }
+.gname { width: 150px; text-align: center; }
+.score { width: 30px; text-align: center; }
+.gmaster { width: 150px; text-align: center; }
+.gnotice { width: 300px; text-align: center; }
+
+.game-storage-holder { display: inline-block; vertical-align: top; padding: 10px 20px;}
+.one-line { display: inline-block; margin-left: 5px; }
+
+.item { display: inline-block; width: 32px; height: 32px; vertical-align: top; position: relative; }
+.item-image { overflow: visible; z-index: 100; position: absolute; display: block; }
+div.empty .item-image, div.taken .item-image { z-index: 0; }
+
+tr.highlight-havefile td {
+	background-color: ff996e;
+	opacity: 0.5;
+}
+span.success-span { 
+  color: #15c900; 
+  font-weight: bold;
+}
+h1.default, h2.default, h3.default, h4.default, h5.default { 
+  background-color: #ff996e; 
+}
