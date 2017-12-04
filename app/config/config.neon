@@ -1,4 +1,6 @@
 parameters:
+	token: put-real-token-into-local-neon
+	apiUrl: https://put.real.url.into.local.neon
 
 
 application:
@@ -6,10 +8,11 @@ application:
 	mapping:
 		*: App\*Module\Presenters\*Presenter
 
-
 session:
 	expiration: 14 days
 
 
 services:
 	router: App\RouterFactory::createRouter
+
+	- App\Services\MupiClient(%apiUrl%, %token%)
