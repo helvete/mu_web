@@ -1,0 +1,12 @@
+#!/bin/bash
+# script for clearing cache folders
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+TMPCACHE=$DIR/../temp/cache
+WWWCACHE=$DIR/../www/webtemp
+
+echo "Clearing cache $TMPCACHE"
+rm -rf $TMPCACHE
+echo "Clearing WWW cache $WWWCACHE"
+rm -rf $WWWCACHE/*
+

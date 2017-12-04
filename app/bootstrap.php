@@ -1,6 +1,7 @@
 <?php
-
 declare(strict_types=1);
+
+umask(002);
 
 require __DIR__ . '/../vendor/autoload.php';
 

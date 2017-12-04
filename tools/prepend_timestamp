@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Script prepends current date and time to the stream data
+#
+# USAGE:
+# echo hello world | tools/prepend_timestamp
+#
+# OUTPUT:
+# 2011-09-26T09:05:52+02:00: hello world
+#
+# Typical crontab usage:
+# /usr/bin/scriptname 2>&1 | /path_to_repository/tools/prepend_timestamp >> /var/log/scriptname
+
+while read line ; do
+	echo `date +%F"T"%R":"%S%:z`": $line"
+done

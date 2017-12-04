@@ -1,0 +1,32 @@
+#!/bin/bash
+# script for simplifying deployment process
+
+# update revision
+echo "Fetching..."
+git fetch
+echo "Updating revision..."
+git pull origin master
+
+# install mandatory dependencies
+echo "Updating composer dependencies..."
+composer install
+
+# delete cache
+echo "Clearing cache..."
+rm -R $PWD/temp/cache
+
+if [ -f "$PWD/temp/btfj.dat" ]
+then
+	rm $PWD/temp/btfj.dat
+fi
+if [ -f "$PWD/www/webtemp/*.js" ]
+then
+	rm $PWD/www/webtemp/*.js
+fi
+if [ -f "$PWD/www/webtemp/*.css" ]
+then
+	rm $PWD/www/webtemp/*.css
+fi
+
+echo "All done!"
+exit 0
