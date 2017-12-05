@@ -12,7 +12,7 @@ class HomepagePresenter extends Nette\Application\UI\Presenter
 	/** @var \App\Services\MupiClient @inject */
 	var $mupiClient;
 
-	public function actionTest() {
+	public function actionDefault() {
 		$result = $this->mupiClient->get([
 			'method' => 'SHOW',
 			'database' => 'MuOnline',
