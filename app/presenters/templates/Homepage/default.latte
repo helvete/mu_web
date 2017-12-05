@@ -1,6 +1,26 @@
 {block content}
 <h2>
-	{$code}
+	{$code} DEBUG
 </h2>
-{$test|noescape}
+<hr />
+<table>
+	{if isset($players[0])}
+	<tr>
+		{foreach $players[0] as $headCaption => $wontUse}
+		<th>
+			{$headCaption}
+		</th>
+		{/foreach}
+	</tr>
+	{/if}
+	{foreach $players as $player}
+		<tr>
+			{foreach $player as $headCaption => $value}
+			<td>
+				{$value}
+			</td>
+			{/foreach}
+		</tr>
+	{/foreach}
+</table>
 {/block}

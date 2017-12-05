@@ -32,12 +32,13 @@ class MupiClient
 		$this->token = $token;
 	}
 
-	protected function request($method, $data) {
+	protected function request($relPath, $method, $data) {
 		$data[self::KEY_KEY] = $this->token;
-		$url = $method === self::METHOD_GET
-			? $this->baseUrl . self::QM . http_build_query($data)
-			: $this->baseUrl;
-		$ch = curl_init($url);
+		$requestUrl = "{$this->baseUrl}{$relPath}";
+		if ($method === self::METHOD_GET) {
+			$requestUrl .= (self::QM . http_build_query($data));
+		}
+		$ch = curl_init($requestUrl);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
@@ -68,18 +69,35 @@ class MupiClient
 			return [self::CURL_ERROR => self::VAL_UNKNOWN];
 		}
 
-		return [$httpCode => $response];
+		return [$httpCode => json_decode($response, true)];
 	}
 
 	public function __call($name, $params) {
 		foreach (self::allowedMethods() as $method) {
 			$lcm = strtolower($method);
-			if (preg_match("/^{$lcm}/", strtolower($name))) {
-				return $this->request($method, $params);
+			$pattern = "/^{$lcm}/";
+			if (preg_match($pattern, $name)) {
+				$junk = preg_replace($pattern, '', $name);
+				if (!$junk) {
+					break;
+				}
+				return $this->request(self::convert($junk), $method, $params);
 			}
 		}
 
-		throw new \Exception("Unknown method '{$name}'");
+		throw new \Exception("Unknown operation '{$name}'");
+	}
+
+	static public function convert($name) {
+		$candidate = preg_replace_callback('/[A-Z]/', function ($matches) {
+			return "/" . strtolower($matches[0]);
+		}, $name);
+
+		if (preg_match('~^/~', $candidate)) {
+			return $candidate;
+		}
+
+		throw new \ErrorException("Incompatible relPath '{$candidate}'");
 	}
 
 	static public function allowedMethods() {

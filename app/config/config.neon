@@ -1,5 +1,6 @@
 parameters:
 	token: put-real-token-into-local-neon
+	# w/o a slash at the end of the URL
 	apiUrl: https://put.real.url.into.local.neon
 
 
