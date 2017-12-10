@@ -74,7 +74,7 @@ class MupiClient
 		return [$httpCode => json_decode($response, true)];
 	}
 
-	public function __call($name, $params) {
+	public function __call($name, array $params = []) {
 		foreach (self::allowedMethods() as $method) {
 			$lcm = strtolower($method);
 			$pattern = "/^{$lcm}/";
