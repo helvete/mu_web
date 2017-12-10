@@ -13,7 +13,7 @@ class HomepagePresenter extends Nette\Application\UI\Presenter
 	var $mupiClient;
 
 	public function actionDefault() {
-		$result = $this->mupiClient->getCharacterList();
+		$result = $this->mupiClient->getCharacter();
 		$this->template->code = key($result);
 		$this->template->players = current($result);
 	}
