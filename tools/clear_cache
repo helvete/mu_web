@@ -6,7 +6,6 @@ TMPCACHE=$DIR/../temp/cache
 WWWCACHE=$DIR/../www/webtemp
 
 echo "Clearing cache $TMPCACHE"
-rm -rf $TMPCACHE
+sudo rm -rf $TMPCACHE
 echo "Clearing WWW cache $WWWCACHE"
-rm -rf $WWWCACHE/*
-
+sudo rm -rf $WWWCACHE/*
