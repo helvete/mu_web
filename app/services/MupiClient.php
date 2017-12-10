@@ -57,7 +57,7 @@ class MupiClient
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 			break;
 		default:
-			throw new \Exception('NIY');
+			throw new \Exception('Method not allowed');
 		}
 		$response = curl_exec($ch);
 		$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
