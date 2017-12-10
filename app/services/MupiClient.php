@@ -37,6 +37,8 @@ class MupiClient
 		$requestUrl = "{$this->baseUrl}{$relPath}";
 		if ($method === self::METHOD_GET) {
 			$requestUrl .= (self::QM . http_build_query($data));
+		} else {
+			$data = json_encode($data);
 		}
 		$ch = curl_init($requestUrl);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
