@@ -7,8 +7,8 @@ namespace App\Presenters;
 use Nette;
 use App\Services\MupiClient;
 
-class HomepagePresenter extends Nette\Application\UI\Presenter
-{
+class HomepagePresenter extends Nette\Application\UI\Presenter {
+
 	/** @var \App\Services\DataProvider\TopList @inject */
 	var $topListProvider;
 

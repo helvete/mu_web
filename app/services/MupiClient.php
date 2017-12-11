@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Services;
 
-class MupiClient
-{
+class MupiClient {
+
 	const KEY_KEY = 'key';
 
 	const METHOD_GET = 'GET';
