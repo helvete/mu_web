@@ -82,9 +82,6 @@ class MupiClient {
 			$pattern = "/^{$lcm}/";
 			if (preg_match($pattern, $name)) {
 				$junk = preg_replace($pattern, '', $name);
-				if (!$junk) {
-					break;
-				}
 				return $this->request(self::convert($junk), $method, $params);
 			}
 		}
@@ -97,11 +94,9 @@ class MupiClient {
 			return "/" . strtolower($matches[0]);
 		}, $name);
 
-		if (preg_match('~^/~', $candidate)) {
-			return $candidate;
-		}
-
-		throw new \ErrorException("Incompatible relPath '{$candidate}'");
+		return preg_match('~^/~', $candidate)
+			? $candidate
+			: "/";
 	}
 
 	static public function allowedMethods() {
