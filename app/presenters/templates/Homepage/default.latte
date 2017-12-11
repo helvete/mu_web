@@ -1,14 +1,13 @@
 {block content}
 <h2>
-	{$code} DEBUG
+	Top {$presenter::TBL_ITEMS_COUNT} players
 </h2>
-<hr />
-<table>
+<table border=1 width=100% border-collapse=1>
 	{if isset($players[0])}
 	<tr>
 		{foreach $players[0] as $headCaption => $wontUse}
-		<th>
-			{$headCaption}
+		<th border=1>
+			{$headCaption|firstUpper}
 		</th>
 		{/foreach}
 	</tr>
@@ -16,7 +15,7 @@
 	{foreach $players as $player}
 		<tr>
 			{foreach $player as $headCaption => $value}
-			<td>
+			<td border=1>
 				{$value}
 			</td>
 			{/foreach}
