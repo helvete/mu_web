@@ -17,3 +17,4 @@ services:
 	router: App\RouterFactory::createRouter
 
 	- App\Services\MupiClient(%apiUrl%, %token%)
+	- App\Services\DataProvider\TopList

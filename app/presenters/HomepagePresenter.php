@@ -9,11 +9,11 @@ use App\Services\MupiClient;
 
 class HomepagePresenter extends Nette\Application\UI\Presenter
 {
-	/** @var \App\Services\MupiClient @inject */
-	var $mupiClient;
+	/** @var \App\Services\DataProvider\TopList @inject */
+	var $topListProvider;
 
 	public function actionDefault() {
-		$result = $this->mupiClient->getCharacter();
+		$result = $this->topListProvider->getCharacter();
 		$this->template->code = key($result);
 		$this->template->players = current($result);
 	}
