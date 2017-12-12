@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Presenters;
 
 use Nette;
-use App\Services\MupiClient;
 
 class HomepagePresenter extends Nette\Application\UI\Presenter {
 
