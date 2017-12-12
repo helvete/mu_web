@@ -25,8 +25,8 @@ class TopList extends BaseDataProvider {
 		usort($itemList, function($a, $b) {
 			foreach (['a', 'b'] as $char) {
 				$varName = "{$char}AbsExp";
-				$$varName = ((int)($$char)[Character::RESET]) * 350;
-				$$varName += (int)($$char)[Character::LEVEL];
+				$$varName = ((int)$$char[Character::RESET]) * 350;
+				$$varName += (int)$$char[Character::LEVEL];
 			}
 			if ($aAbsExp == $bAbsExp) {
 				return 0;
