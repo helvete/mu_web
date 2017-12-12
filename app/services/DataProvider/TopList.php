@@ -11,13 +11,13 @@ class TopList extends BaseDataProvider {
 
 	public function getData(array $params, $limit = null, $offset = 0) {
 		$data = parent::getCharacter(Character::class, $params);
-		$ordered = $this->order($data);
+		$data = $this->order($data);
 
 		// temporarily handle limit and offset manually
 		if (!is_null($limit) && (int)$limit > 0) {
 			return array_slice($data, $offset, $limit);
 		}
-		return $readyToPrint;
+		return $data;
 	}
 
 	// override for toplist to sort by reset, level
