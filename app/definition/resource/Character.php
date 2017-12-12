@@ -38,4 +38,39 @@ class Character extends BaseDefinition {
 	const DB_VERSION = 'db_version';
 	const QUEST = 'quest';
 	const RESET = 'reset';
+
+	static public function getColTypes() {
+		return [
+			self::ACCOUNT => static::TYPE_STRING,
+			self::NAME => static::TYPE_STRING,
+			self::LEVEL => static::TYPE_INT,
+			self::LEVEL_UP_POINT => static::TYPE_INT,
+			self::ID_CLASS => static::TYPE_INT,
+			self::EXPERIENCE => static::TYPE_INT,
+			self::STRENGTH => static::TYPE_INT,
+			self::DEXTERITY => static::TYPE_INT,
+			self::VITALITY => static::TYPE_INT,
+			self::ENERGY => static::TYPE_INT,
+			self::INVENTORY => static::TYPE_HEXBIN,
+			self::MAGIC_LIST => static::TYPE_HEXBIN,
+			self::MONEY => static::TYPE_INT,
+			self::LIFE => static::TYPE_INT,
+			self::MAX_LIFE => static::TYPE_INT,
+			self::MANA => static::TYPE_FLOAT,
+			self::MAX_MANA => static::TYPE_FLOAT,
+			self::ID_MAP => static::TYPE_INT,
+			self::MAP_POSITION_X => static::TYPE_INT,
+			self::MAP_POSITION_Y => static::TYPE_INT,
+			self::ID_DIRECTION => static::TYPE_INT,
+			self::PK_COUNT => static::TYPE_INT,
+			self::PK_LEVEL => static::TYPE_INT,
+			self::PK_TIME => static::TYPE_INT,
+			self::M_DATETIME => static::TYPE_DATETIME,
+			self::L_DATETIME => static::TYPE_DATETIME,
+			self::CHARACTER_LEVEL_CODE => static::TYPE_INT,
+			self::DB_VERSION => static::TYPE_INT,
+			self::QUEST => static::TYPE_HEXBIN,
+			self::RESET => static::TYPE_INT,
+		];
+	}
 }
