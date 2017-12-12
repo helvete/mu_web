@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Definition;
 
-class BaseResource {
+class BaseDefinition {
 
-	static public function getColumnNames() {
+	static public function getConsts() {
 		$classReflection = new \ReflectionClass(get_called_class());
 		return $classReflection->getConstants();
 	}

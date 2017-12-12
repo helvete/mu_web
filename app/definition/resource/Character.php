@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Definition\Resource;
 
-use App\Definition\BaseResource;
+use App\Definition\BaseDefinition;
 
-class Character extends BaseResource {
+class Character extends BaseDefinition {
 
 	const ACCOUNT = 'account';
 	const NAME = 'name';
