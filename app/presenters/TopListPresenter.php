@@ -6,7 +6,7 @@ namespace App\Presenters;
 
 use Nette;
 
-class HomepagePresenter extends Nette\Application\UI\Presenter {
+class TopListPresenter extends BasePresenter {
 
 	const TBL_ITEMS_COUNT = 20;
 
