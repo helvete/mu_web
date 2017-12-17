@@ -2,3 +2,4 @@
 app/config/config.local.neon
 *.swp
 composer.lock
+tags
