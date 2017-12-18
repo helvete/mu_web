@@ -1,0 +1,28 @@
+{block title}
+	Online List
+{/block}
+{block content}
+<h2>
+	Online players
+</h2>
+<table border=1 width=100% border-collapse=1>
+	{if isset($players[0])}
+	<tr>
+		{foreach $players[0] as $headCaption => $wontUse}
+		<th border=1>
+			{$headCaption|firstUpper}
+		</th>
+		{/foreach}
+	</tr>
+	{/if}
+	{foreach $players as $player}
+		<tr>
+			{foreach $player as $headCaption => $value}
+			<td border=1>
+				{$value}
+			</td>
+			{/foreach}
+		</tr>
+	{/foreach}
+</table>
+{/block}

@@ -18,3 +18,4 @@ services:
 
 	- App\Services\MupiClient(%apiUrl%, %token%)
 	- App\Services\DataProvider\TopList
+	- App\Services\DataProvider\OnlineList
