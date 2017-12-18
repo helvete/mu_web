@@ -8,8 +8,5 @@ use Nette;
 
 class DefaultPresenter extends BasePresenter {
 
-	public function actionDefault() {
-		echo "Das ist Default!";
-		$this->terminate();
-	}
+	public function actionDefault(): void { }
 }
