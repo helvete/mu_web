@@ -82,7 +82,7 @@ class BaseDataProvider {
 		throw ErrorException('Fatal error: column definition is missing!');
 	}
 
-	static protected function retype($itemsList, $defClass) {
+	static protected function retype(array $itemsList = [], $defClass) {
 		$rsrcColTypes = $defClass::getColTypes();
 		foreach ($itemsList as $i => $item) {
 			foreach ($item as $colName => $value) {

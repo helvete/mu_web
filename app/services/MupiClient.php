@@ -7,6 +7,9 @@ namespace App\Services;
 class MupiClient {
 
 	const KEY_KEY = 'key';
+	const KEY_ORDER = 'order';
+	const KEY_LIMIT = 'limit';
+	const KEY_FILTER = 'filter';
 
 	const METHOD_GET = 'GET';
 	const METHOD_POST = 'POST';
@@ -34,7 +37,7 @@ class MupiClient {
 		$this->token = $token;
 	}
 
-	protected function request($relPath, $method, $data) {
+	protected function request($relPath, $method, $data): array {
 		$data[self::KEY_KEY] = $this->token;
 		$requestUrl = "{$this->baseUrl}{$relPath}";
 		if ($method === self::METHOD_GET) {
@@ -89,7 +92,7 @@ class MupiClient {
 		throw new \Exception("Unknown operation '{$name}'");
 	}
 
-	static public function convert($name) {
+	static public function convert($name): string {
 		$candidate = preg_replace_callback('/[A-Z]/', function ($matches) {
 			return "/" . strtolower($matches[0]);
 		}, $name);
@@ -99,7 +102,7 @@ class MupiClient {
 			: "/";
 	}
 
-	static public function allowedMethods() {
+	static public function allowedMethods(): array {
 		return [
 			self::METHOD_GET,
 			self::METHOD_POST,
