@@ -82,7 +82,7 @@ class MupiClient {
 			$pattern = "/^{$lcm}/";
 			if (preg_match($pattern, $name)) {
 				$junk = preg_replace($pattern, '', $name);
-				return $this->request(self::convert($junk), $method, $params);
+				return $this->request(self::convert($junk), $method, ...$params);
 			}
 		}
 
