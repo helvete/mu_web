@@ -1,3 +1,0 @@
-RewriteEngine on
-# Pages to Apply
-RewriteRule (.*autocron*) http://%{SERVER_NAME}/index.php [R=301,L]
